@@ -8,7 +8,8 @@
   <script>
   var bundlePath = './build/bundle.js';
     if(typeof process !== 'undefined' && process.env.ENVIRONMENT === 'DEV') {
-      bundlePath = 'http://localhost:8080/build/bundle.js';
+      var port = process.env.npm_package_config_port
+      bundlePath = 'http://localhost:' + port + '/build/bundle.js';
     }
     var bundleScriptEl = document.createElement('script');
     bundleScriptEl.src = bundlePath;

@@ -3,10 +3,14 @@
   "version": "0.0.1",
   "description": "Sample app",
   "main": "main.js",
+  "config": {
+    "port": "8080"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "ENVIRONMENT=DEV ./node_modules/.bin/electron . --debug=5858",
-    "watch": "./node_modules/.bin/webpack-dev-server --hot --inline"
+    "watch": "ENVIRONMENT=DEV ./node_modules/.bin/webpack-dev-server --hot --inline --colors",
+    "webpack": "./node_modules/.bin/webpack"
   },
   "keywords": [
     "Electron",
@@ -33,6 +37,7 @@
     "sass-loader": "^4.0.2",
     "style-loader": "^0.13.1",
     "webpack": "^1.13.2",
-    "webpack-dev-server": "^1.15.1"
+    "webpack-dev-server": "^1.15.1",
+    "webpack-notifier": "^1.4.1"
   }
 }
